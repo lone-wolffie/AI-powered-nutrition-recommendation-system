@@ -14,21 +14,21 @@
         <div class="signup-container">
             <form action="/signup" method="post" class="form">
                 <label for="fullname">Full Name</label> <br>
-                <input type="text" name="fullname" id="fullname" required> <br> <br>
+                <input type="text" name="fullname" id="fullname" pattern="^[A-Za-z\s]{2,50}$" required> <br> <br> <!--Only letters & spaces. Min 2, max 50 characters-->
                 
                 <label for="email">Email Address</label> <br>
                 <input type="email" name="email" id="email" required> <br> <br>
 
                 <label for="phonenumber">Phone Number</label> <br>
-                <input type="tel" name="phonenumber" id="phonenumber" pattern="^\+?[0-9\s\-().]{7,15}$" required> <br> <br>
+                <input type="tel" name="phonenumber" id="phonenumber" pattern="^\+?[0-9\s\-\(\)]{7,15}$" required> <br> <br> <!--Allows +, digits, spaces, dashes, and parentheses. 7–15 characters-->
                 
                 <label for="username">Username</label> <br>
-                <input type="text" name="username" id="username" required> <br> <br>
+                <input type="text" name="username" id="username" pattern="^[A-Za-z0-9_]{3,20}$" required> <br> <br> <!--Letters, numbers, underscores only. 3–20 characters-->
                 
                 <label for="password">Password</label> <br>
-                <input type="password" name="password" id="password" required> <br> <br>
+                <input type="password" name="password" id="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required> <br> <br> <!--At least 8 characters. At least 1 uppercase, 1 lowercase, 1 number, 1 special character-->
                 
-                <a href="home.html" id="signup-btn">Sign Up</a>
+                <button type="submit" id="signup-btn">Sign Up</button>
                 
             </form>
         </div>
